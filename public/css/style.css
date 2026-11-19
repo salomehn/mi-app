@@ -1,0 +1,143 @@
+/* UI vertical toolbar */
+#toolBar {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 20;
+}
+#toolBar .tool {
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+#toolBar .tool.active {
+  background: #c8e6c9; /* pastel green */
+}
+/* simple selection outline */
+.selected-outline {
+  box-sizing: border-box;
+  border: 2px solid #ffeb3b;
+  border-radius: 4px;
+  pointer-events: none;
+}
+/* Instruction overlay */
+#instruction {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  z-index: 20;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #202020;
+  color: #fafafa;
+}
+#ui {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#info {
+  font-size: 1rem;
+  padding: 4px 8px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+#feedIcon {
+  cursor: grab;
+  font-size: 2rem;
+}
+/* Context menu for animal actions */
+.context-menu {
+  position: absolute;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.context-menu button {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.context-menu button:hover {
+  background: #e0e0e0;
+}
+/* Brush icon for grooming */
+#brushIcon {
+  position: absolute;
+  font-size: 2rem;
+  cursor: grab;
+  z-index: 30;
+  user-select: none;
+}
+/* Progress bar for grooming */
+#groomProgress {
+  position: absolute;
+  width: 120px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  z-index: 25;
+}
+#groomProgress .fill {
+  height: 100%;
+  width: 0%;
+  background: #8bc34a;
+  transition: width 0.1s linear;
+}
+
+/* Mejoras de interfaz: panel de cuidados, barra de herramientas, minijuego. */
+#carePanel{position:fixed;left:12px;top:16px;width:210px;max-height:calc(100vh - 40px);overflow:auto;box-sizing:border-box;background:rgba(255,249,235,.95);color:#644e3e;padding:15px;border-radius:18px;box-shadow:0 6px 24px #2f251733;z-index:30;font-size:13px}
+#carePanel h2{margin:0;font-size:17px}#carePanel .care-subtitle{margin:4px 0 14px;opacity:.7}
+.care-row{display:flex;align-items:center;justify-content:space-between;gap:6px;margin:10px 0}
+.care-name{white-space:nowrap}.care-status{white-space:nowrap;font-size:12px}
+#careIndicator{padding-top:10px;border-top:1px solid #e0d4c4;text-align:center;font-weight:700}
+#toolBar{left:235px;top:18px;transform:none;z-index:31}
+#toolBar .tool{font-family:inherit;font-size:25px;padding:0;border:1px solid #e9d8c7}
+#instruction{bottom:18px;z-index:25}
+.floating-heart{position:fixed;font-size:30px;pointer-events:none;z-index:50;animation:floatHeart 1.3s ease-out forwards}
+@keyframes floatHeart{to{transform:translate(-10px,-95px) scale(.7);opacity:0}}
+#groomOverlay{position:fixed;inset:0;z-index:1000;background:#f6e7dd;color:#6b514d}
+#groomOverlay canvas{display:block;touch-action:none;cursor:crosshair}
+.groom-header{position:absolute;top:20px;left:20px;right:20px;z-index:2;display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:18px;pointer-events:none}
+.groom-header button{pointer-events:auto;background:#fff8f0;border:1px solid #eed3cb;border-radius:14px;padding:12px 15px;font-size:14px;color:#634e44;cursor:pointer}
+.groom-progress{position:absolute;bottom:65px;left:50%;transform:translateX(-50%);width:min(330px,70vw);height:18px;border-radius:20px;background:#fff;border:2px solid #dfb8b1;overflow:hidden;z-index:2}
+#groomFill{height:100%;width:0;background:#e89eac;transition:width .12s linear}
+.groom-hint{position:absolute;bottom:100px;left:0;right:0;text-align:center;pointer-events:none;z-index:2;font-weight:600}
+.groom-heart{position:absolute;top:24%;left:48%;font-size:65px;pointer-events:none;animation:floatHeart 1.6s ease-out forwards}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Granja Virtual 3D</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Import map for Three.js (single, correctly closed) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.167.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.167.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="ui">
+    <div id="info"></div>
+    <!-- Icono de paja para alimentar (draggable) -->
+
+  </div>
+  <div id="sceneContainer"></div>
+  <script type="module" src="js/main.js?v=2"></script>
+  <div id="toolBar">
+    <button id="feedTool" class="tool" title="Alimentar" aria-label="Alimentar">🌾</button>
+    <button id="brushTool" class="tool" title="Peinar" aria-label="Peinar">🪮</button>
+  </div>
+</body>
+</html>
